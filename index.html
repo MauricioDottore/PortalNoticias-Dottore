@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Noticias</title>
+    
+    <!-- Font Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Danfo&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    
+    <!-- Styles CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="news.css"> 
+    <link rel="stylesheet" href="footer.css">   
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="nav-brand-link">
+                <img src="resources/news.png" alt="La Capital Logo" class="nav-brand" width="325" height="40">
+            </a>
+            
+            <div class="nav-menu-container">
+                <ul class="nav-menu">
+                    <li><a href="#">Ultimas Noticias</a></li>
+                    <li><a href="#">Ciudad</a></li>
+                    <li><a href="#">Región</a></li>
+                    <li><a href="#">Ovacion</a></li>
+                    <li><a href="#">Economía</a></li>
+                    <li><a href="#">Policiales</a></li>
+                    <li><a href="#">Agroclave</a></li>
+                    <li><a href="form.html">Contáctanos</a></li>
+                </ul>
+                <!-- Hamburguesa -->
+                <div class="hamburger-menu">
+                    <input type="checkbox" id="menu-toggle">
+                    <label for="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </label>
+                    <ul class="nav-menu">
+                        <li><a href="#">Ultimas Noticias</a></li>
+                        <li><a href="#">Ciudad</a></li>
+                        <li><a href="#">Región</a></li>
+                        <li><a href="#">Ovacion</a></li>
+                        <li><a href="#">Economía</a></li>
+                        <li><a href="#">Policiales</a></li>
+                        <li><a href="#">Agroclave</a></li>
+                        <li><a href="form.html">Contáctanos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="news">
+            <article>
+                <img src="resources\noticia1.webp" alt="news" class="news" width="800" height="600">
+                <h2>Desplome en los Mercados: Bolsa Internacional Cierra en Rojo</h2>
+                <p>La bolsa cierra en negativo por incertidumbre económica </p>
+            </article>
+            <article>
+                <img src="resources\noticia2.webp" alt="news" class="news" width="800" height="600">
+                <h2>Innovador Tratamiento Médico Revoluciona la Lucha Contra el Cáncer</h2>
+                <p>Nuevo tratamiento promete erradicar ciertos tipos de cáncer</p>
+            </article>
+            <article>
+                <img src="resources\noticia3.jpg" alt="news" class="news" width="800" height="600">
+                <h2>Crisis Climática: Alerta por Inundaciones en las Costas del País</h2>
+                <p>Autoridades emiten alerta por inundaciones en regiones costeras</p>
+            </article>
+            <article>
+                <img src="resources\noticia4.jpg" alt="news" class="news" width="800" height="600">
+                <h2>Tecnología 5G: El Futuro de las Comunicaciones ya Está Aquí</h2>
+                <p> La red 5G promete conexiones ultrarrápidas y mayor capacidad.</p>
+            </article>
+            <article>
+                <img src="resources\noticia5.jpg" alt="news" class="news" width="800" height="600">
+                <h2>Economía Digital: Aumento de Transacciones en Criptomonedas</h2>
+                <p>Las transacciones en criptomonedas aumentan significativamente, reflejando interés creciente</p>
+            </article>
+            <article>
+                <img src="resources\noticia6.jpg" alt="news" class="news" width="800" height="600">
+                <h2>Nuevo Descubrimiento Arqueológico Desvela Secretos del Antiguo Imperio</h2>
+                <p>Arqueólogos descubren artefactos que revelan secretos de antiguo imperio</p>
+            </article>
+            <article>
+                <img src="resources\noticia7.webp" alt="news" class="news" width="800" height="600">
+                <h2>Campeonato Mundial: Equipo Nacional de Fútbol Hace Historia</h2>
+                <p>El equipo nacional avanza a semifinales tras histórica victoria</p>
+            </article>
+            <article>
+                <img src="resources\noticia8.jpg" alt="news" class="news" width="800" height="600">
+                <h2>Avances en Energías Renovables: Proyecto Solar Más Grande del Mundo Inaugurado</h2>
+                <p>Proyecto solar más grande inaugurado, generará energía limpia para millones</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Sobre Nosotros</h3>
+                    <p>MundoNoticias.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Noticias</a></li>
+                        <li><a href="#">Deportes</a></li>
+                        <li><a href="#">Cultura</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-envelope"></i> contacto@mundonoticias.com</p>
+                    <p><i class="fas fa-phone"></i> +34 123 456 789</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Calle Falsa 123, Ciudad, País</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Síguenos</h3>
+                    <ul class="social-media">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MundoNoticias. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
