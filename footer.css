@@ -1,4 +1,4 @@
-/* footer.css */
+/* Footer */
 footer {
     background-color: #333;
     color: #fff;
@@ -60,9 +60,26 @@ footer {
 }
 
 @media (max-width: 767px) {
+    footer {
+        padding: 1rem 0; /* Adjust padding for mobile */
+    }
+
     .footer-columns {
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+
+    .footer-column h3 {
+        font-size: 1.2rem; /* Adjust font size for mobile */
+    }
+
+    .footer-column p,
+    .footer-column ul li {
+        font-size: 0.9rem; /* Adjust font size for mobile */
+    }
+
+    .footer-column ul.social-media li a {
+        font-size: 1.2rem; /* Adjust icon size for mobile */
     }
 }
