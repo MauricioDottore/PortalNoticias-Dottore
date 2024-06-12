@@ -1,27 +1,57 @@
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("subscription-form");
+    const inputs = form.querySelectorAll("input");
+    const modal = document.getElementById("modal");
+    const modalContent = document.getElementById("modal-content");
 
     form.addEventListener("submit", function(event) {
         event.preventDefault();
         if (validateForm()) {
-            alert("¡Formulario enviado con éxito!");
-            form.reset(); // Para limpiar el formulario después del envío
+            sendData();
         } else {
             alert("Por favor, corrige los errores en el formulario.");
         }
     });
 
-    const inputs = form.querySelectorAll("input");
-
-    inputs.forEach(input => {
-        input.addEventListener("blur", function() {
-            validateInput(input);
+    function sendData() {
+        const formData = new FormData(form);
+        let queryParams = "";
+        formData.forEach((value, key) => {
+            queryParams += `&${key}=${value}`;
         });
+        // Eliminamos el primer "&" que queda al concatenar los parámetros
+        queryParams = queryParams.substring(1);
+        const url = `https://jsonplaceholder.typicode.com/users?${queryParams}`;
+        
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                showModal("¡Suscripción exitosa!", data);
+                saveToLocalStorage(data);
+            })
+            .catch(error => {
+                showModal("Error en la suscripción", { error: error.message });
+            });
+    }
+    
 
-        input.addEventListener("focus", function() {
-            clearErrorMessage(input);
-        });
+    function showModal(message, data) {
+        modalContent.innerHTML = `<h2>${message}</h2><pre>${JSON.stringify(data, null, 2)}</pre>`;
+        modal.style.display = "block";
+    }
+
+    modal.addEventListener("click", function() {
+        modal.style.display = "none";
     });
+
+    function saveToLocalStorage(data) {
+        localStorage.setItem("subscriptionData", JSON.stringify(data));
+    }
 
     function validateForm() {
         let isValid = true;
@@ -148,38 +178,22 @@ document.addEventListener("DOMContentLoaded", function() {
         return dniRegex.test(dni);
     }
 
-    function submitForm() {
-        // Aquí podrías realizar el envío del formulario
-        // usando AJAX o cualquier otra técnica
-        alert("¡Formulario enviado con éxito!");
-    }
+    window.onload = function() {
+        const savedData = localStorage.getItem("subscriptionData");
+        if (savedData) {
+            const parsedData = JSON.parse(savedData);
+            // Llenar el formulario con los datos guardados
+            Object.keys(parsedData).forEach(key => {
+                const input = document.getElementById(key);
+                if (input) {
+                    input.value = parsedData[key];
+                }
+            });
+        }
+    };
 });
 
-inputs.forEach(input => {
-    input.addEventListener("blur", function() {
-        validateInput(input);
-    });
-});
-
-inputs.forEach(input => {
-    input.addEventListener("focus", function() {
-        clearErrorMessage(input);
-    });
-});
-
-const submitButton = document.getElementById("submit-button");
-submitButton.addEventListener("click", function() {
-    if (validateForm()) {
-        alert("¡Formulario enviado con éxito!");
-        form.reset();
-    } else {
-        alert("Por favor, corrige los errores en el formulario.");
-    }
-});
-
-const formTitle = document.getElementById("form-title");
-const formTitleInput = document.getElementById("form-title-input");
-
-formTitleInput.addEventListener("input", function() {
-    formTitle.textContent = formTitleInput.value;
+/*Ocultar Modal*/
+modal.addEventListener("click", function() {
+    modal.style.display = "none";
 });
